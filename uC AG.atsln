@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Port_Test_1", "uC AG\Port_Test_1.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Lauflicht_plus", "Port_Test_2\Lauflicht_plus.cproj", "{C57B5FBC-8302-4157-96E4-5275C7B8808B}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "uartTest", "uart_test\uartTest.cproj", "{C6323477-C2C7-4E90-AD9B-F9F602FE0A0C}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "uart_stdio", "uart_stdio\uart_stdio.cproj", "{CAA69123-63F7-4D6E-AE08-95522AAB6B5E}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "uart_count_ten", "uart_count_ten\uart_count_ten.cproj", "{7973E36E-745D-41EA-9B29-B68D0320FF18}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "uart_stdio_nums_to_port", "uart_stdio_nums_to_port\uart_stdio_nums_to_port.cproj", "{82627C7B-2DE1-4672-B77F-E226D6F35EAC}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Software_PWM_with_ADC", "Software_PWM\Software_PWM_with_ADC.cproj", "{8153DFDC-BA66-47CE-BE09-56F8266D7ABF}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "int_counter", "int_counter\int_counter.cproj", "{69AB08E0-A30E-484E-AA84-AC641202CEB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{C57B5FBC-8302-4157-96E4-5275C7B8808B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C57B5FBC-8302-4157-96E4-5275C7B8808B}.Debug|AVR.Build.0 = Debug|AVR
+		{C57B5FBC-8302-4157-96E4-5275C7B8808B}.Release|AVR.ActiveCfg = Release|AVR
+		{C57B5FBC-8302-4157-96E4-5275C7B8808B}.Release|AVR.Build.0 = Release|AVR
+		{C6323477-C2C7-4E90-AD9B-F9F602FE0A0C}.Debug|AVR.ActiveCfg = Debug|AVR
+		{C6323477-C2C7-4E90-AD9B-F9F602FE0A0C}.Debug|AVR.Build.0 = Debug|AVR
+		{C6323477-C2C7-4E90-AD9B-F9F602FE0A0C}.Release|AVR.ActiveCfg = Release|AVR
+		{C6323477-C2C7-4E90-AD9B-F9F602FE0A0C}.Release|AVR.Build.0 = Release|AVR
+		{CAA69123-63F7-4D6E-AE08-95522AAB6B5E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CAA69123-63F7-4D6E-AE08-95522AAB6B5E}.Debug|AVR.Build.0 = Debug|AVR
+		{CAA69123-63F7-4D6E-AE08-95522AAB6B5E}.Release|AVR.ActiveCfg = Release|AVR
+		{CAA69123-63F7-4D6E-AE08-95522AAB6B5E}.Release|AVR.Build.0 = Release|AVR
+		{7973E36E-745D-41EA-9B29-B68D0320FF18}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7973E36E-745D-41EA-9B29-B68D0320FF18}.Debug|AVR.Build.0 = Debug|AVR
+		{7973E36E-745D-41EA-9B29-B68D0320FF18}.Release|AVR.ActiveCfg = Release|AVR
+		{7973E36E-745D-41EA-9B29-B68D0320FF18}.Release|AVR.Build.0 = Release|AVR
+		{82627C7B-2DE1-4672-B77F-E226D6F35EAC}.Debug|AVR.ActiveCfg = Debug|AVR
+		{82627C7B-2DE1-4672-B77F-E226D6F35EAC}.Debug|AVR.Build.0 = Debug|AVR
+		{82627C7B-2DE1-4672-B77F-E226D6F35EAC}.Release|AVR.ActiveCfg = Release|AVR
+		{82627C7B-2DE1-4672-B77F-E226D6F35EAC}.Release|AVR.Build.0 = Release|AVR
+		{8153DFDC-BA66-47CE-BE09-56F8266D7ABF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{8153DFDC-BA66-47CE-BE09-56F8266D7ABF}.Debug|AVR.Build.0 = Debug|AVR
+		{8153DFDC-BA66-47CE-BE09-56F8266D7ABF}.Release|AVR.ActiveCfg = Release|AVR
+		{8153DFDC-BA66-47CE-BE09-56F8266D7ABF}.Release|AVR.Build.0 = Release|AVR
+		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Debug|AVR.Build.0 = Debug|AVR
+		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Release|AVR.ActiveCfg = Release|AVR
+		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
