@@ -16,10 +16,10 @@ int main(){
 	//Teil 3
 //
 	////Endlosschleife die '#' ausgibt
-	while(1)
-	{
-		UART_putByte('#');
-	}
+	//while(1)
+	//{
+		//UART_putByte('#');
+	//}
 	
 	//Teil 3 Ende
 	///////////////////////////////////////////////////////////////////
@@ -28,10 +28,10 @@ int main(){
 	//Teil 5.2
 
 	//Endlosschleife die Daten vom UART liest und auf PORTC ausgibt
-	while(1)
-	{
-		PORTC = ~UART_getByte();
-	}
+	//while(1)
+	//{
+		//PORTC = ~UART_getByte();
+	//}
 	//Teil 5.2 Ende
 	///////////////////////////////////////////////////////////////////
 

@@ -39,6 +39,7 @@ void setupADC()
 {
 	ADMUX |= (1<<REFS0)|(7<<MUX0);
 	SFIOR = 0; //free running mode
+	ADCSRA |= 1<<ADPS0 | 1<<ADPS1 | 1<<ADPS2; 
 	ADCSRA |= (1<<ADEN)|(1<<ADSC)|(1<<ADATE);
 }
 

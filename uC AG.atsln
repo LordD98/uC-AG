@@ -19,6 +19,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Software_PWM_with_ADC", "So
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "int_counter", "int_counter\int_counter.cproj", "{69AB08E0-A30E-484E-AA84-AC641202CEB5}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "adc_to_uart", "adc_to_uart\adc_to_uart.cproj", "{BC5DFD73-EB3C-4912-A573-6D733DBD42FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -57,6 +59,10 @@ Global
 		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Debug|AVR.Build.0 = Debug|AVR
 		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Release|AVR.ActiveCfg = Release|AVR
 		{69AB08E0-A30E-484E-AA84-AC641202CEB5}.Release|AVR.Build.0 = Release|AVR
+		{BC5DFD73-EB3C-4912-A573-6D733DBD42FF}.Debug|AVR.ActiveCfg = Debug|AVR
+		{BC5DFD73-EB3C-4912-A573-6D733DBD42FF}.Debug|AVR.Build.0 = Debug|AVR
+		{BC5DFD73-EB3C-4912-A573-6D733DBD42FF}.Release|AVR.ActiveCfg = Release|AVR
+		{BC5DFD73-EB3C-4912-A573-6D733DBD42FF}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
