@@ -15,25 +15,16 @@ start:
 	OUT SPH, r16				;
 	rcall init					;
 
-	; r16 = 0 temp var to count a cycle for pwm
-	; r17 holds the duty cycle for the software pwm
 main:
-	ldi r16, 0x00				;	0 means led on	
-	ldi r18, 0x00				;
-	
-lp:	cp r16, r17
-	brne PC + 2
-	ldi r18, 0xFF				;	r16 == r17
-	OUT PORTC, r18				;	r16 == r17 || r16 != r17
-	inc r16
-	brne lp
-	
+	IN r16, PORTC				;	toggle PORTC
+	COM r16						;
+	OUT PORTC, r16				;
+	rcall delay					;	delay 500ms (with rcall and ret should take 500ms + 7T)
 	rjmp main					;	loop
 
 init:
 	LDI r16, 0xFF				;	PORTC as output
 	OUT DDRC, r16				;
-	LDI r17, 250					;	duty cycle in r17
 	ret
 
 

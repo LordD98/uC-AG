@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Atmel Studio Solution File, Format Version 11.00
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "Port_Test_1", "uC AG\Port_Test_1.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "adc_to_uart", "adc_to_uart\adc_to_uart.cproj", "{BC5DFD73-EB3C-4912-A573-6D733DBD42FF}"
 EndProject
 Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "SoftwarePWM+ADC_Assembly", "SoftwarePWM+ADC_Assembly\SoftwarePWM+ADC_Assembly.asmproj", "{59B1D629-9DCC-43ED-A0FD-8AB0E4D622AB}"
+EndProject
+Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "Blink_Assembler", "Blink_Assembler\Blink_Assembler.asmproj", "{BDB300EA-1335-495B-8D78-02F6FAE24599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{59B1D629-9DCC-43ED-A0FD-8AB0E4D622AB}.Debug|AVR.Build.0 = Debug|AVR
 		{59B1D629-9DCC-43ED-A0FD-8AB0E4D622AB}.Release|AVR.ActiveCfg = Release|AVR
 		{59B1D629-9DCC-43ED-A0FD-8AB0E4D622AB}.Release|AVR.Build.0 = Release|AVR
+		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Debug|AVR.ActiveCfg = Debug|AVR
+		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Debug|AVR.Build.0 = Debug|AVR
+		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Release|AVR.ActiveCfg = Release|AVR
+		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
