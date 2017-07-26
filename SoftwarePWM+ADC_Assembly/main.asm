@@ -26,14 +26,20 @@ main:
 	ldi r16, 0x00				;	0 means led on	
 	ldi r18, 0x00				;
 	
-	/*
-	lp1:cp r16, r17
+	
+lp1:cp r16, r17
 	brne PC + 2
 	ldi r18, 0xFF				;	r16 == r17
 	OUT PORTC, r18				;	r16 == r17 || r16 != r17
 	inc r16
 	brne lp1
-	*/	
+		
+	/*
+	COM r17
+	OUT PORTC, r17
+	COM r17
+	*/
+	
 	rjmp main					;	loop
 
 init:
@@ -41,7 +47,7 @@ init:
 	OUT DDRC, r16				;
 	LDI r17, 0xFF				;	duty cycle in r17
 	
-	LDI r16, 0x47				;	set up adc (64|7)
+	LDI r16, 0x67				;	set up adc (64|7|32)(0x67) (32 = 1<<5 =^= ADLAR (left adjust))
 	OUT ADMUX, r16				;
 
 	LDI r16, 0x87				;		(128|7)
@@ -60,13 +66,12 @@ readadc:
 	SBI ADCSRA, ADSC				;	start conversion
 
 lp2:SBIC ADCSRA, ADSC				;	check if bit ADSC (conversion running) bit is set
-	rjmp lp2						;	wait as long it is not set
-	nop
-
-	IN r17, ADCL					;	duty cycle in r17 is set to the value in ADCL
-	COM r17
-	OUT PORTC, r17
-	COM r17
+	rjmp lp2						;	wait as long it is set
+	
+	
+	IN r17, ADCH					;	duty cycle in r17 is set to the value in ADCH (because of left adjust) 
+	
+	LDI r17, 127
 	ret
 
 

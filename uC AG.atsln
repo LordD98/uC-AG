@@ -25,6 +25,8 @@ Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "SoftwarePWM+ADC_Assembly", 
 EndProject
 Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "Blink_Assembler", "Blink_Assembler\Blink_Assembler.asmproj", "{BDB300EA-1335-495B-8D78-02F6FAE24599}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "adc_uart_int", "adc_uart_int\adc_uart_int.cproj", "{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -75,6 +77,10 @@ Global
 		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Debug|AVR.Build.0 = Debug|AVR
 		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Release|AVR.ActiveCfg = Release|AVR
 		{BDB300EA-1335-495B-8D78-02F6FAE24599}.Release|AVR.Build.0 = Release|AVR
+		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Debug|AVR.ActiveCfg = Debug|AVR
+		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Debug|AVR.Build.0 = Debug|AVR
+		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Release|AVR.ActiveCfg = Release|AVR
+		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

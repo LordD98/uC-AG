@@ -11,6 +11,7 @@
 #include <util/delay.h>
 
 void setupADC(void);
+uint16_t read_adc(void);
 
 int main(void)
 {
@@ -22,24 +23,39 @@ int main(void)
 	
     while (1) 
     {
-		if (count == duty)
+	    duty = read_adc()>>8;
+		do
 		{
-			PORTC = 0xFF;
+			if (count == duty)
+			{
+				PORTC = 0xFF;
+			}
+			else if(count == 0)
+			{
+				PORTC = 0x00;
+			}
+			count++;
 		}
-		else if(count == 0)
-		{
-			PORTC = 0x00;
-		}
-		count++;
-		duty = ADCL;			//works in simulation
+		while (count <= 255);
     }
 }
 
 void setupADC()
 {
-	ADMUX |= (1<<REFS0)|(7<<MUX0);
-	SFIOR = 0; //free running mode
-	ADCSRA |= 1<<ADPS0 | 1<<ADPS1 | 1<<ADPS2; 
-	ADCSRA |= (1<<ADEN)|(1<<ADSC)|(1<<ADATE);
+	//OLD:
+	//ADMUX |= (1<<REFS0)|(7<<MUX0);
+	//SFIOR = 0; //free running mode
+	//ADCSRA |= 1<<ADPS0 | 1<<ADPS1 | 1<<ADPS2; 
+	//ADCSRA |= (1<<ADEN)|(1<<ADSC)|(1<<ADATE);
+	
+	//NEW
+	ADMUX = (1<<REFS0)|(7<<MUX0)|(1<<ADLAR);
+	ADCSRA = (1<<ADEN) | (1<<ADPS0) | (1<<ADPS1) | (1<<ADPS2);
 }
 
+uint16_t read_adc() {
+	//ADCR Conversation starten
+	ADCSRA |= (1<< ADSC);
+	while (ADCSRA&(1<<ADSC));
+	return ADC;
+}
