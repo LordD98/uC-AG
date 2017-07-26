@@ -7,6 +7,9 @@
 
 .include "m16def.inc"
 
+//.org ADCCaddr rjmp ISR_ADCC              ; ADC Interrupt Vector Address
+
+
 ; Replace with your application code
 start:
 	LDI r16, LOW(RAMEND)		;	init the stack pointer
@@ -15,25 +18,55 @@ start:
 	OUT SPH, r16				;
 	rcall init					;
 
-	; r16 = 0 temp var to count a cycle for pwm
 	; r17 holds the duty cycle for the software pwm
+	; r16 = 0 temp var to count a cycle for pwm
 main:
+	//SBI
+	rcall readadc				;	get the new duty cycle
 	ldi r16, 0x00				;	0 means led on	
 	ldi r18, 0x00				;
 	
-lp:	cp r16, r17
+	/*
+	lp1:cp r16, r17
 	brne PC + 2
 	ldi r18, 0xFF				;	r16 == r17
 	OUT PORTC, r18				;	r16 == r17 || r16 != r17
 	inc r16
-	brne lp
-	
+	brne lp1
+	*/	
 	rjmp main					;	loop
 
 init:
 	LDI r16, 0xFF				;	PORTC as output
 	OUT DDRC, r16				;
-	LDI r17, 250					;	duty cycle in r17
+	LDI r17, 0xFF				;	duty cycle in r17
+	
+	LDI r16, 0x47				;	set up adc (64|7)
+	OUT ADMUX, r16				;
+
+	LDI r16, 0x87				;		(128|7)
+	OUT ADCSRA, r16				;
+
+	;sei
+	ret
+
+/*ISR_ADCC:
+	in R15,SREG
+	rcall readadc
+	out SREG,R15
+	reti*/
+
+readadc:
+	SBI ADCSRA, ADSC				;	start conversion
+
+lp2:SBIC ADCSRA, ADSC				;	check if bit ADSC (conversion running) bit is set
+	rjmp lp2						;	wait as long it is not set
+	nop
+
+	IN r17, ADCL					;	duty cycle in r17 is set to the value in ADCL
+	COM r17
+	OUT PORTC, r17
+	COM r17
 	ret
 
 
