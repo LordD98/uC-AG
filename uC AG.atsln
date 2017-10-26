@@ -27,6 +27,8 @@ Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "Blink_Assembler", "Blink_As
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "adc_uart_int", "adc_uart_int\adc_uart_int.cproj", "{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ReadButtonsWriteLEDs", "ReadButtonsWriteLEDs\ReadButtonsWriteLEDs.cproj", "{7BDC5292-19A9-4B8B-8AD1-749D1791D4CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -81,6 +83,10 @@ Global
 		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Debug|AVR.Build.0 = Debug|AVR
 		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Release|AVR.ActiveCfg = Release|AVR
 		{86F85DD8-EC27-4080-92D9-1392A4CCA7D2}.Release|AVR.Build.0 = Release|AVR
+		{7BDC5292-19A9-4B8B-8AD1-749D1791D4CD}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7BDC5292-19A9-4B8B-8AD1-749D1791D4CD}.Debug|AVR.Build.0 = Debug|AVR
+		{7BDC5292-19A9-4B8B-8AD1-749D1791D4CD}.Release|AVR.ActiveCfg = Release|AVR
+		{7BDC5292-19A9-4B8B-8AD1-749D1791D4CD}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

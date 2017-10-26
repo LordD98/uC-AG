@@ -6,9 +6,8 @@ void UART_putByte(uint8_t byte);
 uint8_t UART_getByte();
 
 
-
-
-int main(){
+int main()
+{
 	//Ruft setup
 	setup();
 

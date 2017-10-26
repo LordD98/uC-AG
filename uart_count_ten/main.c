@@ -9,8 +9,6 @@ void UART_putByte(uint8_t byte);
 uint8_t UART_getByte();
 
 
-
-
 int main()
 {
     uint8_t i;
@@ -19,8 +17,10 @@ int main()
 	setup();
 
 
-	while(1) {
-        for( i=1; i<10; i++ ) {
+	while(1)
+	{
+        for( i=1; i<10; i++ )
+		{
             UART_putByte( '0' + i);
             _delay_ms( 1000 );
         }
@@ -35,7 +35,8 @@ int main()
 }
 
 
-void setup(){
+void setup()
+{
 
 	//UBBRL und UBBRH mit dem Wert aus dem Datenblatt laden
 	UBRRH = 0x00;
@@ -53,25 +54,18 @@ void setup(){
 
 	//UCSRC laden
 	UCSRC = (1<<URSEL) | (1<<UCSZ0) | (1<<UCSZ1) | (1<<UPM1);
-
 }
 
-void UART_putByte(uint8_t byte){
-
-	//Warten bis UDR leer ist -> Bit in UCSRA
-	while( !( UCSRA & ( 1<<UDRE )));
-    //Daten in UDR laden
-	UDR = byte;
-
+void UART_putByte(uint8_t byte)
+{
+	while(!(UCSRA&(1<<UDRE)));			//Warten bis UDR leer ist -> Bit in UCSRA
+	UDR = byte;							//Daten in UDR laden
 }
 
-uint8_t UART_getByte(){
-
-	//Warten bis Empfangen komplett ist -> Bit in UCSRA
-	while( !( UCSRA & ( 1<<RXC ) ) );
-	//Daten aus UDR lesen
-
-	return UDR;
+uint8_t UART_getByte()
+{	
+	while(!(UCSRA & (1<<RXC)));		//Warten bis Empfangen komplett ist -> Bit in UCSRA
+	return UDR;								//Daten aus UDR lesen
 }
 
 

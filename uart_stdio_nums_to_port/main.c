@@ -6,22 +6,24 @@
 
 void setup();
 
-int uart_put_char( uint8_t byte, FILE* stream );
+int uart_put_char(uint8_t byte, FILE* stream);
 
-int uart_get_char( FILE* stream );
+int uart_get_char(FILE* stream);
 
-FILE mystream = FDEV_SETUP_STREAM( uart_put_char, uart_get_char, _FDEV_SETUP_RW );
+FILE mystream = FDEV_SETUP_STREAM(uart_put_char, uart_get_char, _FDEV_SETUP_RW);
 
-int main(void) {
-
-    uint16_t in;
-
+int main(void)
+{
+    uint8_t in;
     setup();
 
     stdout = &mystream;
     stdin = &mystream;
 
-    while(1) {
+    while(1)
+	{
+		//printf("test\n");
+		
         scanf("%d", &in);
         printf("Empfangen %d\n", in);
 
@@ -31,12 +33,12 @@ int main(void) {
     return 0;
 }
 
-
-void setup() {
+void setup()
+{
     DDRC = 0xFF;
 
     UBRRH = 0x00;
-    UBRRL = 7;
+    UBRRL = 95;
 
     UCSRA = 0x00;
     UCSRB = (1<<TXEN) | (1<<RXEN);
@@ -54,7 +56,3 @@ int uart_get_char( FILE* stream ) {
 
     return UDR;
 }
-
-
-
-

@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <util/delay.h>
 
+
+/************************************************************************/
+/*						CONFIRMED WORKING			                    */
+/************************************************************************/
+
 void setup();
 
 int uart_put_char( uint8_t byte, FILE* stream );
