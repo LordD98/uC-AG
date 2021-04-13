@@ -20,20 +20,21 @@ int main(void)
     setup();
     while(1)
 	{
-	    if((~PINA & (1<<PINA0)))
-		{
+	    //if((~PINA & (1<<PINA0)))
+		//{
 			adc_value = read_adc();
 			/*adc_value mit printf ausgeben*/
 			printf("Analog-Wert: %d\n", (adc_value>>2)&0xFF);
 			/*10ms Warten zum entprellen*/
 			_delay_ms(10);
-	    }
+	    //}
     }
 
     return 0;
 }
 
-void setup() {
+void setup()
+{
 	/*
 	 * UART mit 9600 Baud no Parity und 1 Stoppbit
 	 */
